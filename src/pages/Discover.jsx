@@ -1,10 +1,14 @@
 import React from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import { Error, Loader, SongCard } from '../components';
 import { genres } from '../assets/constants';
 import { useGetTopChartsQuery } from '../redux/services/ShazaamCore'
 
 const Discover = () => {
+  const dispatch = useDispatch();
+  const { } = useSelector((state) => state.player);
   // call from redux for API
   const { data, isFetching, error } = useGetTopChartsQuery();
   const genreTitle = 'Romantic';
